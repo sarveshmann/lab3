@@ -47,6 +47,8 @@ class ListExamples {
     }
     return result;
   }
+}
 
-
+class IsA implements StringChecker {
+  public checkString(String s) { return s.equals("a"); }
 }
