@@ -5,11 +5,14 @@ interface StringChecker { boolean checkString(String s); }
 
 class ListExamples {
 
+  // changed to subtle
+  static List<String> result = new ArrayList<>();
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
   // the same order they appeared in the input list;
   static List<String> filter(List<String> list, StringChecker sc) {
-    List<String> result = new ArrayList<>();
+    if(list.size() == 0) { return list; }
+    result.clear();
     for(String s: list) {
       if(sc.checkString(s)) {
         result.add(s);
